@@ -41,7 +41,7 @@ public class LoginController {
 	@PostMapping("/register")
 	public ResponseEntity<User> registerUser(@Valid @RequestBody RegisterUser user)
 	{
-		System.out.println("commiting from git");
+		System.out.println("commitiing from local");
 		return new ResponseEntity<User>(service.createUser(user),HttpStatus.CREATED);
 	}
 	
