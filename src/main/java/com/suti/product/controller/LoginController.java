@@ -34,18 +34,22 @@ public class LoginController {
 	@PostMapping("/login")
 	public LoginResponse login(@Valid @RequestBody LoginRequest request)
 	{
+		System.out.println("logging the user")
 		return service.loginService(request);
 	}
 	
 	@PostMapping("/register")
 	public ResponseEntity<User> registerUser(@Valid @RequestBody RegisterUser user)
 	{
+		System.out.println("register the user");
 		return new ResponseEntity<User>(service.createUser(user),HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/users")
 	public List<User> getAllUsers()
 	{
+
 		return service.findAllUsers();
 	}
+	
 }
