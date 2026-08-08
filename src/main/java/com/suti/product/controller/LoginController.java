@@ -34,7 +34,7 @@ public class LoginController {
 	@PostMapping("/login")
 	public LoginResponse login(@Valid @RequestBody LoginRequest request)
 	{
-		System.out.println("commiting from git")
+		System.out.println("commiting from git repository")
 		return service.loginService(request);
 	}
 	
