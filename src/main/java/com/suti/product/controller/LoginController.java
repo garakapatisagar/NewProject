@@ -75,6 +75,7 @@ public class LoginController {
 	@DeleteMapping("/users/{id}")
 	public void deleteById(@PathVariable Integer id)
 	{
+		//reset command
 		 service.deleteById(id);
 	}
 	
