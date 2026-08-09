@@ -71,7 +71,6 @@ public class LoginService {
 	}
 
 	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
 		repository.deleteById(id);
 	}
 }
