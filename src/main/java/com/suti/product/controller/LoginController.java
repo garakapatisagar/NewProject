@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,8 @@ import com.suti.product.entity.User;
 import com.suti.product.service.LoginService;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/auth")
@@ -34,7 +37,7 @@ public class LoginController {
 	@PostMapping("/login")
 	public LoginResponse login(@Valid @RequestBody LoginRequest request)
 	{
-		System.out.println("commiting from git repository")
+		System.out.println("commiting from git repository");
 		return service.loginService(request);
 	}
 	
@@ -51,5 +54,13 @@ public class LoginController {
 
 		return service.findAllUsers();
 	}
+	
+	@GetMapping("/users/{id}")
+	public User getById(@PathVariable Integer id)
+	{
+
+		return service.findById(id);
+	}
+	
 	
 }

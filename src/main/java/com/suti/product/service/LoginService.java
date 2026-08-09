@@ -1,6 +1,7 @@
 package com.suti.product.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.dao.DataIntegrityViolationException;
@@ -44,10 +45,11 @@ public class LoginService {
           
 		User newuser=new User();
 		User saveduser=null;
+		try {
 			newuser.setEmail(user.getEmail());
 			newuser.setName(user.getName());
 			newuser.setPassword(user.getPassword());
-			try {
+			
 			 saveduser = repository.save(newuser);
 			}catch(DataIntegrityViolationException ex)
 			{
@@ -61,5 +63,10 @@ public class LoginService {
 	public List<User> findAllUsers() {
 		     
 		return repository.findAll();
+	}
+
+	public User findById(Integer id) {
+		
+		return repository.findById(id).get();
 	}
 }
