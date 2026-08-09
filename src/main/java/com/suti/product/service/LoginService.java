@@ -69,4 +69,9 @@ public class LoginService {
 		
 		return repository.findById(id).get();
 	}
+
+	public void deleteById(Integer id) {
+		// TODO Auto-generated method stub
+		repository.deleteById(id);
+	}
 }
