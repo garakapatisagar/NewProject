@@ -62,5 +62,26 @@ public class LoginController {
 		return service.findById(id);
 	}
 	
+<<<<<<< HEAD
+=======
+
+	//2 nd task
+	@GetMapping("/users/getAll")
+	public List<User> getAlUsers()
+	{
+
+		return service.findAllUsers();
+	}
+
+	@DeleteMapping("/users/{id}")
+	public void deleteById(@PathVariable Integer id)
+	{
+		//reset command
+		 service.deleteById(id);
+	}
+	
+	
+
+>>>>>>> 80e0cbf (message added)
 	
 }
