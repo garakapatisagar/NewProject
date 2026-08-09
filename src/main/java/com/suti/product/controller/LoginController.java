@@ -62,5 +62,12 @@ public class LoginController {
 		return service.findById(id);
 	}
 	
+	//2 nd task
+	@GetMapping("/users/getAll")
+	public List<User> getAlUsers()
+	{
+
+		return service.findAllUsers();
+	}
 	
 }
