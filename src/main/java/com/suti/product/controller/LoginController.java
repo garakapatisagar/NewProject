@@ -75,7 +75,6 @@ public class LoginController {
 	@DeleteMapping("/users/{id}")
 	public void deleteById(@PathVariable Integer id)
 	{
-		//rest command is used to remove changes from local repository
 		 service.deleteById(id);
 	}
 	
